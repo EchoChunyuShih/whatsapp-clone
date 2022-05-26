@@ -31,9 +31,9 @@ export async function getServerSideProps(context) {
 
   //prep the messages on the server
   const messageRef = collection(db, "chats", context.query.id, "messages");
-  const q = query(messageRef, orderBy("timestamp", "asc"));
+  const orderedMessage = query(messageRef, orderBy("timestamp", "asc"));
 
-  const messageRes = await getDocs(q);
+  const messageRes = await getDocs(orderedMessage);
   const messages = messageRes.docs
     .map((doc) => ({
       id: doc.id,
