@@ -27,7 +27,7 @@
 1. Clone this Repo to your local enviromnent
 
 ```
-$ git clone https://github.com/EchoChunyuShih/whatsapp2.0.git
+$ git clone https://github.com/EchoChunyuShih/whatsapp-clone.git
 
 $ cd whatsappv2
 ```
