@@ -3,8 +3,6 @@ import { doc, getDoc, orderBy, query } from "firebase/firestore";
 import Head from "next/head";
 import styled from "styled-components";
 import ChatScreen from "../../components/ChatScreen";
-import Layout from "../../components/Layout";
-import Sidebar from "../../components/Sidebar";
 import { db } from "../../utils/firebase";
 
 const Chat = ({ chat, messages }) => {
@@ -13,7 +11,6 @@ const Chat = ({ chat, messages }) => {
       <Head>
         <title>Chat</title>
       </Head>
-      {/* <Sidebar /> */}
       <ChatContainer>
         <ChatScreen chat={chat} messages={messages} />
       </ChatContainer>

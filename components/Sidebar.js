@@ -28,6 +28,7 @@ const Sidebar = () => {
         chat.data().users.find((user) => user === recipientEmail)?.length > 0
     );
   const createChat = () => {
+    
     const input = prompt(
       "Please enter an email for the user you wish to chat with"
     );
@@ -46,10 +47,13 @@ const Sidebar = () => {
       });
     }
   };
+  const signout=()=>{
+    auth.signOut()
+  }
   return (
     <Container>
       <Header>
-        <UserAvatar onClick={() => auth.signOut()} src={user.photoURL} />
+        <UserAvatar onClick={signout} src={user.photoURL} />
         <IconsContainer>
           <IconButton>
             <ChatIcon />
