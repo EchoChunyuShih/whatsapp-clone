@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> WhatsApp 2.0
+</h1>
 
-## Getting Started
+<div align="center">
+<img alt="next.js" src="https://img.shields.io/badge/Next.js-000?&logo=Next"/>  
+<img alt="yarn" src="https://img.shields.io/badge/Yarn-white?logo=yarn&color=blue&logoColor=white"/>
+<img alt="yarn" src="https://img.shields.io/badge/NPM-#DB7093?&logo=styled-components"/>
+<img alt="styled components" src="https://img.shields.io/badge/styled%20components"/>
+<img alt="echo" src="https://img.shields.io/badge/Made%20by-Echo-ff69b4"/>
 
-First, run the development server:
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
+## 📄 Description
+
+## ✨ USAGE
+
+1. Clone this Repo to your local enviromnent
+
+```
+$ git clone
+
+$ cd whatsappv2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+$ yarn install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. run the project
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+$ yarn dev
+```
 
-## Learn More
+## 🥳 Live Demo
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p>
+   <!-- <a href="https://calculator-green-six.vercel.app/"><img alt="" src="https://img.shields.io/badge/Live%20on%20Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"></a>   -->
+</p>
