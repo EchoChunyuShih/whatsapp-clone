@@ -1,10 +1,9 @@
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { IconButton } from "@mui/material";
-
 import { useState } from "react";
-import Button from "@mui/material/Button";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+
+import { auth } from "../utils/firebase";
 
 const CustomVerticalMore = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -16,11 +15,13 @@ const CustomVerticalMore = () => {
     setAnchorEl(null);
   };
 
+  const signout = () => {
+    auth.signOut();
+  };
+
   return (
-    <div>
-      <IconButton onClick={handleClick}>
-        <MoreVertIcon />
-      </IconButton>
+    <>
+      <MoreVertIcon onClick={handleClick} />
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
@@ -40,9 +41,9 @@ const CustomVerticalMore = () => {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={signout}>Logout</MenuItem>
       </Menu>
-    </div>
+    </>
   );
 };
 export default CustomVerticalMore;
