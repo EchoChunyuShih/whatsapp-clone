@@ -12,14 +12,20 @@
 
 </div>
 
+
+
+<h4 align="center">🚧Under Construction🚧</h3>
+
 ## 📄 Description
+
+
 
 ## ✨ USAGE
 
 1. Clone this Repo to your local enviromnent
 
 ```
-$ git clone https://github.com/EchoChunyuShih/whatsapp2.0
+$ git clone https://github.com/EchoChunyuShih/whatsapp2.0.git
 
 $ cd whatsappv2
 ```
@@ -45,6 +51,8 @@ $ yarn dev
 - [moment](https://momentjs.com/)
 
 ## 🥳 Live Demo
+
+
 
 <p>
    <!-- <a href="https://calculator-green-six.vercel.app/"><img alt="" src="https://img.shields.io/badge/Live%20on%20Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"></a>   -->
