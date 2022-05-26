@@ -2,10 +2,9 @@
 </h1>
 
 <div align="center">
-<img alt="next.js" src="https://img.shields.io/badge/Next.js-000?&logo=Next"/>  
+<img alt="next.js" src="https://img.shields.io/badge/Next.js-000?&logo=nextdotjs"/>  
 <img alt="yarn" src="https://img.shields.io/badge/Yarn-white?logo=yarn&color=blue&logoColor=white"/>
-<img alt="yarn" src="https://img.shields.io/badge/NPM-#DB7093?&logo=styled-components"/>
-<img alt="styled components" src="https://img.shields.io/badge/styled%20components"/>
+<img alt="styled components" src="https://img.shields.io/badge/Styled%20Components-000?&color=DB7093&logo=styledcomponents&logoColor=white"/>
 <img alt="echo" src="https://img.shields.io/badge/Made%20by-Echo-ff69b4"/>
 
 </div>
