@@ -3,7 +3,16 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { orderBy, collection, query, doc, setDoc, serverTimestamp, addDoc, where, getDocs } from "firebase/firestore";
+import {
+  orderBy,
+  collection,
+  query,
+  doc,
+  setDoc,
+  serverTimestamp,
+  addDoc,
+  where,
+} from "firebase/firestore";
 import { Avatar, IconButton } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
@@ -17,10 +26,13 @@ import TimeAgo from "timeago-react";
 
 const ChatScreen = ({ chat, messages }) => {
   const [user] = useAuthState(auth);
-  const [input, setInput] = useState("");
+  const [newMessage, setNewMessage] = useState("");
   const endofMessageRef = useRef(null);
   const router = useRouter();
-  const messageRef = query(collection(db, "chats", router.query.id, "messages"), orderBy("timestamp", "asc"));
+  const messageRef = query(
+    collection(db, "chats", router.query.id, "messages"),
+    orderBy("timestamp", "asc")
+  );
   const [messagesSnapshot] = useCollection(messageRef);
 
   const showMessages = () => {
@@ -36,7 +48,9 @@ const ChatScreen = ({ chat, messages }) => {
         />
       ));
     } else {
-      return JSON.parse(messages).map((message) => <Message key={message.id} user={message.user} message={message} />);
+      return JSON.parse(messages).map((message) => (
+        <Message key={message.id} user={message.user} message={message} />
+      ));
     }
   };
   const sendMessage = (e) => {
@@ -56,7 +70,7 @@ const ChatScreen = ({ chat, messages }) => {
     const q = query(messageRef);
     addDoc(q, {
       timestamp: serverTimestamp(),
-      message: input,
+      message: newMessage,
       user: user.email,
       photoURL: user.photoURL,
     });
@@ -64,7 +78,10 @@ const ChatScreen = ({ chat, messages }) => {
     scrollToBottom();
   };
 
-  const recipientRef = query(collection(db, "users"), where("email", "==", getRecipientEmail(chat.users, user)));
+  const recipientRef = query(
+    collection(db, "users"),
+    where("email", "==", getRecipientEmail(chat.users, user))
+  );
   const recipientEmail = getRecipientEmail(chat.users, user);
   const [recipientSnapshot] = useCollection(recipientRef);
   const recipient = recipientSnapshot?.docs[0]?.data();
@@ -78,14 +95,22 @@ const ChatScreen = ({ chat, messages }) => {
   return (
     <Container>
       <Header>
-        {recipient ? <UserAvatar src={recipient?.photoUrl} /> : <UserAvatar>{recipientEmail[0]}</UserAvatar>}
+        {recipient ? (
+          <UserAvatar src={recipient?.photoUrl} />
+        ) : (
+          <UserAvatar>{recipientEmail[0]}</UserAvatar>
+        )}
 
         <HeaderInfo>
           <h3>{recipient?.displayName || recipientEmail}</h3>
           {recipientSnapshot ? (
             <span>
               Last Active:{" "}
-              {recipient?.lastSeen.seconds ? <TimeAgo datetime={Date(recipient?.lastSeen.seconds)} /> : "unavailable"}
+              {recipient?.lastSeen.seconds ? (
+                <TimeAgo datetime={Date(recipient?.lastSeen.seconds)} />
+              ) : (
+                "unavailable"
+              )}
             </span>
           ) : (
             <span>Loading Last Active....</span>
@@ -106,8 +131,16 @@ const ChatScreen = ({ chat, messages }) => {
       </MessageContainer>
       <InputContainer>
         <SentimentSatisfiedAltIcon />
-        <Input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button hidden disabled={!input} type="submit" onClick={sendMessage}>
+        <Input
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)}
+        />
+        <button
+          hidden
+          disabled={!newMessage}
+          type="submit"
+          onClick={sendMessage}
+        >
           send Message
         </button>
         <MicIcon />
