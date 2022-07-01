@@ -1,9 +1,10 @@
-import { Avatar } from "@mui/material";
 import { collection, where, query } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import styled from "styled-components";
+import { Avatar } from "@mui/material";
+
 import { auth, db } from "../utils/firebase";
 import getRecipientEmail from "../utils/getRecipientEmail";
 
@@ -23,6 +24,7 @@ const Chat = ({ id, users }) => {
   const enterChat = () => {
     router.push(`/chat/${id}`);
   };
+
   return (
     <Container onClick={enterChat}>
       {recipient ? (
